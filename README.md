@@ -6,7 +6,7 @@
 
 ```bash
 pip install marky
-``
+```
 
 **Add to `INSTALLED_APPS`**
 
