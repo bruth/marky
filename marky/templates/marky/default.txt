@@ -2,7 +2,7 @@
 
 I use Markdown everywhere.. so I wanted a quick way to preview some Markdown before, say.. writing a blog post or writing a README for GitHub. Feel free to use it, it updates as you type.
 
-In addition to the [lovely simplicity][1] of Markdown, here are extra **features** that have been added:
+In addition to the [lovely simplicity][1] of Markdown, here are extra **features** that have been added (look at the Markdown on the left):
 
 [1]: http://en.wikipedia.org/wiki/Markdown#Syntax_examples
 

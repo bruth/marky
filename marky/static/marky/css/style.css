@@ -1,18 +1,5 @@
-body {
-    background-color: #f6f6f6;
-    text-shadow: 0 1px 1px #fff;
-}
-
-pre {
+.highlight {
     background-color: inherit;
-}
-
-code {
-    color: #000;
-}
-
-hr {
-    border-top-color: #ddd;
 }
 
 #preview-form {
@@ -27,19 +14,21 @@ hr {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    resize: none;
-    background-color: inherit;
+    padding: 10px;
     border: none;
+    outline: none;
+    resize: none;
 }
 
 #preview-area {
     box-sizing: border-box;
-    overflow: auto;
     position: fixed;
-    height: 90%;
     width: 45.5%;
     top: 5%;
     right: 3%;
+    height: 90%;
+    padding: 10px;
+    overflow: auto;
 }
 
 #preview-area > :first-child {
