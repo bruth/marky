@@ -1,0 +1,66 @@
+## Marky.. A Live Markdown Editor
+
+I use Markdown everywhere.. so I wanted a quick way to preview some Markdown before, say.. writing a blog post or writing a README for GitHub. Feel free to use it, it updates as you type.
+
+In addition to the [lovely simplicity][1] of Markdown, here are extra **features** that have been added:
+
+[1]: http://en.wikipedia.org/wiki/Markdown#Syntax_examples
+
+---
+
+### Tables of Contents
+
+Automatically add `id="foo"` attributes to headers.
+
+[TOC]
+
+_Arguably there is a bug in the parser since I don't think it should render headers above the actual  `[TOC]` definition itself. In this example, the page title is included..._
+
+---
+
+### Autolinks
+
+- www.google.com
+- 192.168.0.1
+- ftp://example.org
+- jdoe@example.com
+
+---
+
+### Super/Subscripts
+
+- 2^32^
+- H~2~O
+
+---
+
+### Abbreviations
+
+- HTML
+- WWW
+
+*[HTML]: Hypertext Markup Language
+*[WWW]: World Wide Web
+
+---
+
+### Footnotes
+
+**Hello World!** examples are heavily overused.[^1]
+
+[^1]: Although the [Hello World](http://en.wikipedia.org/wiki/Hello_world_program) is indeed overused, arguably every client-side MV* library known to man has a [Todos Example](http://addyosmani.github.com/todomvc/) and has become the new _Hello World_.
+
+---
+
+### Fenced Code Blocks with Pygments
+
+```coffeescript
+hello (name) ->
+    "Hello #{name}"
+```
+
+```javascript
+function hello(name) {
+    return 'Hello ' + name;
+}
+```
