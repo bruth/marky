@@ -10,7 +10,7 @@ pip install marky
 
 **Add to `INSTALLED_APPS`**
 
-Also required if the supplied template is used is `django.contrib.staticfiles`.
+`django.contrib.staticfiles` is also required if the supplied template is used.
 
 ```python
 INSTALLED_APPS = (
