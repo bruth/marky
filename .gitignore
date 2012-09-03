@@ -1,3 +1,4 @@
-*.pyc
+*.sw?
+*.py?
 *.egg-info
 dist

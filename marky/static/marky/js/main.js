@@ -3,15 +3,15 @@ $(function() {
         $form = $('#preview-form'),
         $text = $('[name=markup]', $form),
         $area = $('#preview-area'),
-        $example = $('#preview-example');
+        $example = $('.preview-example'),
+        $toggle = $('#preview-toggle li');
 
     // Various standalone key codes
-    var TAB = 9,
-        SPACE = 32;
+    var TAB = 9, SPACE = 32;
 
     function postMarkup() {
         $.post($form.attr('action'), $form.serialize(), function(html) {
-            $area.html(html).fadeIn(200);
+            $area.html(html);
         });
     }
 
@@ -44,6 +44,26 @@ $(function() {
     });
 
     $text.focus();
+
+    $toggle.on('click', function(event) {
+        event.preventDefault();
+        var $this = $(this),
+            active = $this.hasClass('active');
+
+        // Already active, nothing to do
+        if (active) return;
+
+        var $target = $($this.find('a').attr('href')),
+            siblings = $this.siblings();
+
+        siblings.each(function() {
+            $(this).removeClass('active');
+            $($('a', this).attr('href')).addClass('hidden');
+        });
+
+        $this.addClass('active');
+        $target.removeClass('hidden');
+    });
 
     $example.on('click', function(event) {
         event.preventDefault();

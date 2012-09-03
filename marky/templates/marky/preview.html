@@ -2,13 +2,19 @@
 {% load url from future %}
 
 {% block content %}
-    
+    <div id=preview-toolbar>
+        <a class=preview-example href=#>Show example</a>
+        <ul id=preview-toggle>
+            <li class=active><a href=#preview-form>Write</a></li>
+            <li><a href=#preview-area>Preview</a></li>
+        </ul>
+    </div>
     <form id=preview-form method="post" action="{% url "marky-preview" %}">
         {% csrf_token %}
         <textarea tabindex=1 name=markup placeholder="Type some markdown..."></textarea>
     </form>
-    <div id=preview-area>
-        Show <a id=preview-example href=#>an example</a>
+    <div id=preview-area class=hidden>
+        <a class=preview-example href=#>Show example</a>
     </div>
 {% endblock %}
 
@@ -16,6 +22,7 @@
     <link rel=stylesheet href="{{ STATIC_URL }}marky/css/pygments/default.css">
     <link rel=stylesheet href="{{ STATIC_URL }}marky/css/normalize.css">
     <link rel=stylesheet href="{{ STATIC_URL }}marky/css/style.css">
+    <link rel=stylesheet href="{{ STATIC_URL }}marky/css/markup.css">
 {% endblock %}
 
 {% block scripts %}
