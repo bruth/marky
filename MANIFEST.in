@@ -1,2 +1,3 @@
 graft marky/templates
 graft marky/static
+global-exclude *.swp

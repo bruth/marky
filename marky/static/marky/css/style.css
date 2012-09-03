@@ -6,16 +6,12 @@ body {
 
 #preview-form {
     box-sizing: border-box;
-    font-family: consolas, "liberation mono", courier, monospace;
-    font-size: 14px;
-    text-shadow: 0 1px 1px #fff;
-    background-color: inherit;
     position: fixed;
     width: 50%;
-    height: 100%;
     left: 0;
     top: 0;
     bottom: 0;
+    overflow: auto;
 }
 
 #preview-form [name=markup] {
@@ -31,7 +27,6 @@ body {
     border: none;
     outline: none;
     resize: none;
-    overflow: auto;
 }
 
 #preview-area {
@@ -95,7 +90,6 @@ body {
     border: 1px solid #aaa;
 }
 
-
 #preview-toggle > li a {
     text-decoration: none;
 }
@@ -120,6 +114,10 @@ body {
         top: 30px;
         width: 100%;
         height: auto;
+    }
+
+    #preview-area, #preview-form [name=markup] {
+        padding: 10px;
     }
 
     #preview-area .preview-example {
