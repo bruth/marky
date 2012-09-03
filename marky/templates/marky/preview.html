@@ -2,19 +2,24 @@
 {% load url from future %}
 
 {% block content %}
+    
     <form id=preview-form method="post" action="{% url "marky-preview" %}">
         {% csrf_token %}
-        <textarea tabindex=1 name=markup placeholder="Type some markdown...">{% include "marky/default.txt" %}</textarea>
+        <textarea tabindex=1 name=markup placeholder="Type some markdown..."></textarea>
     </form>
-    <div id=preview-area></div>
+    <div id=preview-area>
+        ...or show <a id=preview-example href=#>an example</a>
+    </div>
 {% endblock %}
 
 {% block styles %}
     <link rel=stylesheet href="{{ STATIC_URL }}marky/css/pygments/default.css">
+    <link rel=stylesheet href="{{ STATIC_URL }}marky/css/normalize.css">
     <link rel=stylesheet href="{{ STATIC_URL }}marky/css/style.css">
 {% endblock %}
 
 {% block scripts %}
+    <script id=example-markup type="text/markdown">{% include "marky/default.txt" %}</script>
     <script src="{{ STATIC_URL }}marky/js/jquery.js"></script>
     <script src="{{ STATIC_URL }}marky/js/main.js"></script>
 {% endblock %}

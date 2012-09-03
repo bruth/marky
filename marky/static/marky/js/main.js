@@ -2,7 +2,8 @@ $(function() {
     var timer,
         $form = $('#preview-form'),
         $text = $('[name=markup]', $form),
-        $area = $('#preview-area');
+        $area = $('#preview-area'),
+        $example = $('#preview-example');
 
     // Various standalone key codes
     var TAB = 9,
@@ -42,6 +43,14 @@ $(function() {
         }
     });
 
+    $text.focus();
+
+    $example.on('click', function(event) {
+        event.preventDefault();
+        $text.val($('#example-markup').text());
+        postMarkup();
+    });
+
     // If the form is submitted explicitly, stop the timer and
     // submit the post the markup.
     $form.on('submit', function(event) {
@@ -49,6 +58,4 @@ $(function() {
         clearTimeout(timer);
         postMarkup();
     });
-
-    postMarkup();
 });
