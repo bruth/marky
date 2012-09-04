@@ -10,8 +10,8 @@ class UrlizePattern(markdown.inlinepatterns.Pattern):
 
         if '@' in url and not '/' in url:
             url = 'mailto:' + url
-        elif not PROTOCOL_MATCH.search(url):
-            url = 'http://' + url
+        elif not PROTOCOL_MATCH.match(url):
+            return
 
         el = markdown.util.etree.Element("a")
         el.set('href', url)

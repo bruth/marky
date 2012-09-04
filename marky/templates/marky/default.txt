@@ -20,8 +20,8 @@ _Arguably there is a bug in the parser since I don't think it should render head
 
 ### Autolinks
 
-- www.google.com
-- 192.168.0.1
+- http://www.google.com
+- http://192.168.0.1
 - ftp://example.org
 - jdoe@example.com
 
