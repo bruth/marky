@@ -9,8 +9,7 @@
             <li><a href=#preview-area>Preview</a></li>
         </ul>
     </div>
-    <form id=preview-form method="post" action="{% url "marky-preview" %}">
-        {% csrf_token %}
+    <form id=preview-form method="post" action="{% url "marky-api" %}">
         <textarea tabindex=1 name=markup placeholder="Type some markdown..."></textarea>
     </form>
     <div id=preview-area class=hidden>
