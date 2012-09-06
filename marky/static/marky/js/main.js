@@ -28,10 +28,9 @@ $(function() {
                 var value = $text.val();
                 $text.val(value.substring(0, start) + '    ' + value.substring(end));
                 this.selectionStart = this.selectionEnd = start + 4;
-            }
 
             // Ignore non-character keys: http://www.webonweboff.com/tips/js/event_key_codes.aspx 
-            else if (key != SPACE && ((key > 13 && key < 46) || (key > 90 && key < 96) || (key > 111 && key < 188))) {
+            } else if (key != SPACE && ((key > 13 && key < 46) || (key > 90 && key < 96) || (key > 111 && key < 186))) {
                 return;
             }
 
