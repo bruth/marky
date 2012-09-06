@@ -19,15 +19,15 @@ $(function() {
         keydown: function(event) {
             var key = event.which;
 
-            // Insert real tab 
+            // Insert real tab
             if (key == TAB) {
                 event.preventDefault();
                 var start = this.selectionStart,
                     end = this.selectionEnd;
 
                 var value = $text.val();
-                $text.val(value.substring(0, start) + '    ' + value.substring(end));
-                this.selectionStart = this.selectionEnd = start + 4;
+                $text.val(value.substring(0, start) + '\t' + value.substring(end));
+                this.selectionStart = this.selectionEnd = start + 1;
 
             // Ignore non-character keys: http://www.webonweboff.com/tips/js/event_key_codes.aspx 
             } else if (key != SPACE && ((key > 13 && key < 46) || (key > 90 && key < 96) || (key > 111 && key < 186))) {
