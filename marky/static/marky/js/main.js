@@ -17,8 +17,6 @@ $(function() {
 
     $text.on({
         keydown: function(event) {
-            clearTimeout(timer);
-
             var key = event.which;
 
             // Insert real tab 
@@ -36,6 +34,9 @@ $(function() {
             else if (key != SPACE && ((key > 13 && key < 46) || (key > 90 && key < 96) || (key > 111 && key < 188))) {
                 return;
             }
+
+            // Clear previous timeout
+            clearTimeout(timer);
 
             timer = setTimeout(function() {
                 postMarkup();
