@@ -1,7 +1,7 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 kwargs = {
-    'packages': ['marky'],
+    'packages': find_packages(),
     'py_modules': ['mdx_superscript', 'mdx_subscript', 'mdx_urlize'],
     'include_package_data': True,
     'install_requires': [
