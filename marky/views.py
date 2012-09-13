@@ -3,23 +3,7 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from django.views.decorators.http import require_safe, require_POST
 from django.views.decorators.csrf import csrf_exempt
-from markdown import Markdown
-
-markdown = Markdown(output_format='html5', extensions=[
-    'toc',
-    'abbr',
-    'nl2br',
-    'tables',
-    'urlize',
-    'def_list',
-    'footnotes',
-    'superscript',
-    'subscript',
-    'sane_lists',
-    'smart_strong',
-    'fenced_code',
-    'codehilite(css_class=highlight)',
-])
+from .markup import convert_markdown
 
 @require_safe
 def preview(request):
@@ -44,6 +28,5 @@ def api(request):
     else:
         markup = request.POST.get('markup', '')
 
-    markdown.reset()
-    response.content = markdown.convert(markup)
+    response.content = convert_markdown(markup)
     return response
