@@ -15,6 +15,7 @@ markdown = Markdown(output_format='html5', extensions=[
     'smart_strong',
     'fenced_code',
     'codehilite(css_class=highlight)',
+    'hashtag',
 ])
 
 def convert_markdown(text):

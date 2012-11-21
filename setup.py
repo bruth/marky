@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 kwargs = {
     'packages': find_packages(),
-    'py_modules': ['mdx_superscript', 'mdx_subscript', 'mdx_urlize'],
+    'py_modules': ['mdx_superscript', 'mdx_subscript', 'mdx_urlize', 'mdx_hashtag'],
     'include_package_data': True,
     'install_requires': [
         'django',
